@@ -1,0 +1,44 @@
+
+body{
+  background-color: white;
+}
+.wrapper{
+  display: table-row-group;
+  display: -webkit-box;
+  justify-content: space-around;
+}
+.container-child {
+  display:grid;
+  grid-template-columns: auto auto auto;
+  background-color: rgb(243, 237, 237);
+  border: 3px inset;
+}
+
+.container{
+background-color: white;
+margin: 10rem 10rem 10rem;
+}
+.date{
+  margin-left: 200px;
+}
+.input{
+  margin-right: 890px
+}
+.button{
+  margin-right: 890px
+}
+.userz{
+  width:35rem;
+}
+#icon{
+  margin: 1rem 1rem;
+}
+#computerIcon{
+  margin: 0rem 1rem;
+}
+#usersTrash{
+  margin: 0rem 1rem;
+}
+ul{
+  list-style: none;
+}
