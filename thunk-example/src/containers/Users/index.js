@@ -24,7 +24,6 @@ class Users extends Component {
   };
 
   render() {
-    console.log("this.props :", this.props);
     const { users } = this.props;
     return (
       <div className="userz">
@@ -33,19 +32,17 @@ class Users extends Component {
           {users.map(user => (
             <div className="wrapper">
              
-              <h3> {user["first_name"]}<ul>
-              
-              <li><i id="usersTrash"
+              <h3 className="h3"> {user["first_name"]}
+               </h3>
+              <p className="date">
+                {moment(user.date).format("Do MMMM  YYYY, h:mm:ss a")}
+              </p>
+              <i 
                 className="fa fa-trash"
                 onClick={() => this.props.removeUser(user["first_name"])}
                 aria-hidden="true"
                 style={{ cursor: "pointer"}}
-              ></i></li>
-              </ul>
-               </h3>
-              <p className="date">
-                {moment(user["first_name"].date).format("Do MMMM  YYYY, h:mm:ss a")}
-              </p>
+              ></i>
             </div>
           ))}
           <input
