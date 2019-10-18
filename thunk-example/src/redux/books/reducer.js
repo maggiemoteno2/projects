@@ -13,6 +13,19 @@ export default function books(state = initialState, action) {
   switch (action.type) {
     case "ADD_BOOK": {
       const { name, author} = action.payload;
+      if(state.availableBooks.length<=0){
+        return{
+          availableBooks: [
+            ...state.availableBooks,
+            {
+              name: name,
+              author: author,
+              date: new Date(),
+              id: 1,
+            }
+          ]
+        }
+      }
       return {
         availableBooks: [
           ...state.availableBooks,
@@ -42,7 +55,7 @@ export default function books(state = initialState, action) {
       return {
         availableBooks: [
           ...state.availableBooks.filter(
-            books => books.name !== action.payload.name
+            books => books.id !== action.payload.id
           )
         ]
       };
