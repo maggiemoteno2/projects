@@ -12,6 +12,18 @@ export default function computers(state = initialState, action) {
   switch (action.type) {
     case "ADD_COMPUTER": {
       const {name, } = action.payload;
+      if(state.computerNames.length<=0){
+        return{
+          computerNames: [
+            ...state.computerNames,
+            {
+              name: name,
+              date: new Date(),
+              id:1,
+            }
+          ]
+        }
+      }
       return {
         computerNames: [
           ...state.computerNames,
