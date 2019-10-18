@@ -1,5 +1,6 @@
 const inititalState = { all: [ ],
-date:[] }
+date:new Date()
+ }
 
 export default function counter(state = inititalState, action) {
   
@@ -10,6 +11,9 @@ export default function counter(state = inititalState, action) {
         all: action.payload }
     }
     case "ADD_USER": {
+      if(state.all.length<=0){
+        return {all: [...state.all,{id: 1, first_name: action.payload.first_name}] }
+      }
       const newState = { ...state, all: [...state.all,{id: state.all[state.all.length-1].id +1 ,first_name: action.payload.first_name}] }
       return newState;
     }
