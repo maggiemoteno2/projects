@@ -23,7 +23,6 @@ class Books extends Component {
       } else if (availableBooks[i].author === name) {
         return this.state.idEdited;
       }
-  console.log('this.state :', this.state);
     }
 
     this.props.addBook(name, author);
@@ -34,11 +33,20 @@ class Books extends Component {
     });
   };
   editBook=(name,id)=>{
+    console.log("sdfd",this.state.titleEdited)
+    if(this.state.idEdited===""){
+      return
+    }
+    this.setState({
+      ...this.state,
+      titleEdited: "",
+      
+    });
     this.props.editTitle(name,id)
+
   }
 
   setEditedAuthor = (name, id) => {
-
     this.setState({
       titleEdited: name,
       idEdited: id
@@ -55,18 +63,18 @@ class Books extends Component {
             
             <h3 className="h3"> Name: {book.name} 
             <i id="icon"
-              className="fa fa-trash"
-              onClick={() =>
-                this.props.removeBook(book.name, book.author, book.id)
-              } 
-              aria-hidden="true"
-              style={{ cursor: "pointer"}}
-            ></i>
-            <i id="icon"
               class="fa fa-edit"
               onClick={() => this.setEditedAuthor(book.name, book.id)}
               aria-hidden="true"
               style={{ cursor: "pointer" }}
+            ></i>
+            <i
+              className="fa fa-trash"
+              onClick={() =>
+                this.props.removeBook(book.id)
+              } 
+              aria-hidden="true"
+              style={{ cursor: "pointer"}}
             ></i>
              </h3>
             <h3 className="h3"> Aurthor: {book.author} </h3>
@@ -97,7 +105,7 @@ class Books extends Component {
             name="titleEdited"
             onChange={e => this.setState({ titleEdited: e.target.value })}
           />
-          <button disabled={this.state.idEdited === ""}
+          <button disabled={this.state.titleEdited === ""}
             onClick={() => this.editBook(titleEdited, idEdited,)}
           >
             save
@@ -118,8 +126,8 @@ const mapDispatchToProps = dispatch => {
     addBook: (name, author) => {
       dispatch(addBook(name, author));
     },
-    removeBook: (name, author) => {
-      dispatch(removeBook(name, author));
+    removeBook: (id) => {
+      dispatch(removeBook(id));
     },
     editTitle:(name,id)=>{
       dispatch(editTitle(name,id))
