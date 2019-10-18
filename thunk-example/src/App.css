@@ -1,11 +1,14 @@
 
 body{
-  background-color: white;
+  background-color: rgb(71, 57, 57);
 }
 .wrapper{
-  display: table-row-group;
   display: -webkit-box;
   justify-content: space-around;
+  display: flex;
+    align-content: center;
+    align-items: center;
+
 }
 .container-child {
   display:grid;
@@ -18,8 +21,14 @@ body{
 background-color: white;
 margin: 10rem 10rem 10rem;
 }
+.h3{
+  flex: 1;
+}
 .date{
-  margin-left: 200px;
+  flex:3;
+}
+.fa{
+  flex:1;
 }
 .input{
   margin-right: 890px
