@@ -24,10 +24,10 @@ export function addBook(name, author,date) {
         payload: { name, author,date}
     }
 }
-export function removeBook(name,author){
+export function removeBook(id){
     return{
         type:"REMOVE_BOOK",
-        payload:{ name, author }
+        payload:{id}
     }
 }
 export function removeUser(user){
