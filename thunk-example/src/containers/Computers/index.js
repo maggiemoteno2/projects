@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { removeComputer } from "./../../redux/actions";
-import { addComputer } from "./../../redux/actions";
 import moment from "moment";
 
 
