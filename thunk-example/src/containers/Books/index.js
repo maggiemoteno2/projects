@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addBook } from "./../../redux/actions";
-import { editTitle, saveEditedValue } from "./../../redux/actions";
+import { editTitle} from "./../../redux/actions";
 import { removeBook } from "./../../redux/actions";
 import moment from "moment";
 
