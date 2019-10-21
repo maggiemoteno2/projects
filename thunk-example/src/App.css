@@ -34,7 +34,8 @@ margin: 10rem 10rem 10rem;
   margin-right: 890px
 }
 .button{
-  margin-right: 890px
+  margin-right: 890px;
+  
 }
 .userz{
   width:35rem;
@@ -48,6 +49,8 @@ margin: 10rem 10rem 10rem;
 #usersTrash{
   margin: 0rem 1rem;
 }
-ul{
-  list-style: none;
+button{
+  border: 1px;
+  color:rgb(241, 235, 235);
+  background-color: black
 }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getAllUsers, addUser } from "../../redux/users/thunks";
-import { removeUser } from "./../../redux/actions";
+import { removeUser } from "./../../redux/users/actions"
 import moment from "moment";
 
 class Users extends Component {
@@ -35,7 +35,7 @@ class Users extends Component {
               <h3 className="h3"> {user["first_name"]}
                </h3>
               <p className="date">
-                {moment(user.date).format("Do MMMM  YYYY, h:mm:ss a")}
+                {moment(user["first_name"].date).format("Do MMMM  YYYY, h:mm:ss a")}
               </p>
               <i 
                 className="fa fa-trash"

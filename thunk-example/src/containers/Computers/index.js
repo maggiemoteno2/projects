@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { removeComputer } from "./../../redux/actions";
+import { removeComputer,addComputer} from "./../../redux/computer/actions"
 import moment from "moment";
 
 
@@ -43,6 +43,9 @@ class index extends Component {
           name="name"
           onChange={this.handleChange}
         />
+        <button disabled={this.state.name === ""} onClick={() => this.computerAdd(this.state.name)}>
+          Add Computer
+        </button>
         {this.props.computerNames.map(computerNames => (
           <div key={computerNames.name}>
             
@@ -60,9 +63,6 @@ class index extends Component {
           </div>
         ))}
 
-        <button disabled={this.state.name === ""} onClick={() => this.computerAdd(this.state.name)}>
-          Add Computer
-        </button>
       </div>
     );
   }
@@ -74,10 +74,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => {
   return {
     addComputer: name => {
-      dispatch({
-        type: "ADD_COMPUTER",
-        payload: { name }
-      });
+      dispatch(addComputer(name))
     },
     removeComputer: id => {
       dispatch(removeComputer( id));

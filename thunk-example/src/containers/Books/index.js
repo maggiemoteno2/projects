@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addBook } from "./../../redux/actions";
-import { editTitle } from "./../../redux/actions";
-import { removeBook } from "./../../redux/actions";
+import { addBook } from "./../../redux/books/actions"
+import { editTitle } from "./../../redux/books/actions"
+import { removeBook } from "./../../redux/books/actions"
 import moment from "moment";
 
 class Books extends Component {
@@ -36,7 +36,6 @@ class Books extends Component {
     });
   };
   editBook = (name, id) => {
-    console.log("sdfd", this.state.titleEdited);
     if (this.state.idEdited === "") {
       return;
     }
