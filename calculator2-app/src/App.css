@@ -1,0 +1,40 @@
+
+.container {
+  margin: 120px 700px 0px 700px;
+  background-color: purple;
+  padding: 30px 30px 30px 30px;  
+  border: 5px solid black;
+  border-radius: 25px;
+}
+.keypads{
+  grid-template-columns: auto auto auto;
+    display: grid;
+    background: #c789f1;
+    color: #202124;
+    border-radius: 10px;
+    margin-top: 18px;    
+  }
+  
+  button {
+    background-color: rgb(37, 21, 37); 
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    outline:none;
+  }
+.Output {
+  height: 7vh;
+  width: 37.8vh;
+  padding-left: 20px;
+  background-color:  #202124;
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+}
