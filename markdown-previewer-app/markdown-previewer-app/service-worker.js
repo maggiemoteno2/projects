@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/maggiemoteno2/maggiemoteno.github.io/tree/master/free-code-camp-projects/markdown-previewer-app/precache-manifest.45501bcf19583c5ba1f3ab9616e78bec.js"
+  "/maggiemoteno2/maggiemoteno.github.io/tree/master/markdown-previewer-app/precache-manifest.42fcc69f8e12fbf1e069ab968ee117dc.js"
 );
 
 self.addEventListener('message', (event) => {
@@ -33,7 +33,7 @@ workbox.core.clientsClaim();
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/maggiemoteno2/maggiemoteno.github.io/tree/master/free-code-camp-projects/markdown-previewer-app/index.html"), {
+workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/maggiemoteno2/maggiemoteno.github.io/tree/master/markdown-previewer-app/index.html"), {
   
   blacklist: [/^\/_/,/\/[^\/?]+\.[^\/]+$/],
 });
