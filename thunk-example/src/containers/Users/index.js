@@ -7,7 +7,7 @@ import moment from "moment";
 class Users extends Component {
   constructor(props) {
     super(props);
-    this.state = { newUser: "" };
+    this.state = { newUser: "" ,};
   }
 
   componentDidMount() {
@@ -19,8 +19,18 @@ class Users extends Component {
   };
 
   addUser = () => {
+    const { users } = this.props;
+    console.log("compare",this.state.newUser)
+    for(var i= 0; i<users.length;i++){
+      if(this.state.newUser===users[i].first_name){
+        alert("user exist")
+        return;
+      }
+    }
+    this.setState({ newUser: "", 
+});
     this.props.addUser({ first_name: this.state.newUser });
-    this.setState({ newUser: "" });
+    
   };
 
   render() {
@@ -35,7 +45,7 @@ class Users extends Component {
               <h3 className="h3"> {user["first_name"]}
                </h3>
               <p className="date">
-                {moment(user["first_name"].date).format("Do MMMM  YYYY, h:mm:ss a")}
+                {moment(user.date).format("Do MMMM  YYYY, h:mm:ss a")}
               </p>
               <i 
                 className="fa fa-trash"

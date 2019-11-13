@@ -1,3 +1,5 @@
+import { ADD_COMPUTER, REMOVE_COMPUTER } from "../actionTypes";
+
 const initialState = {
   computerNames: [
     {
@@ -10,11 +12,11 @@ const initialState = {
 
 export default function computers(state = initialState, action) {
   switch (action.type) {
-    case "ADD_COMPUTER": {
+    case ADD_COMPUTER: {
       const {name, } = action.payload;
       if(state.computerNames.length<=0){
         return{
-          computerNames: [
+          ...state,computerNames: [
             ...state.computerNames,
             {
               name: name,
@@ -25,7 +27,7 @@ export default function computers(state = initialState, action) {
         }
       }
       return {
-        computerNames: [
+       ...state,computerNames: [
           ...state.computerNames,
           {
             name: name,
@@ -36,11 +38,11 @@ export default function computers(state = initialState, action) {
       };
     
     }
-    case "REMOVE_COMPUTER": {
+    case REMOVE_COMPUTER: {
       return {
         computerNames: [
           ...state.computerNames.filter(
-            computer => computer.id !== action.payload.id
+            computer => computer.id !==action.payload.id
           )
         ]
       };

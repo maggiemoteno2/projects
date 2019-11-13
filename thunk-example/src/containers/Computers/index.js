@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { removeComputer,addComputer} from "./../../redux/computer/actions"
 import moment from "moment";
 
-
 class index extends Component {
   constructor(props) {
     super(props);
@@ -46,19 +45,19 @@ class index extends Component {
         <button disabled={this.state.name === ""} onClick={() => this.computerAdd(this.state.name)}>
           Add Computer
         </button>
-        {this.props.computerNames.map(computerNames => (
-          <div key={computerNames.name}>
+        {this.props.computerNames.map(computerName => (
+          <div key={computerName.name}>
             
-            <h3> {computerNames.name}
+            <h3> {computerName.name}
             <i id="computerIcon"
               className="fa fa-trash"
-              onClick={() => this.props.removeComputer(computerNames.id)}
+              onClick={() => this.props.removeComputer(computerName.id)}
               aria-hidden="true"
               style={{ cursor: "pointer", marginRight: "30px" }}
             ></i>
              </h3>
             <p className="time">
-              {moment(computerNames.date).format("Do MMMM  YYYY, h:mm:ss a")}
+              {moment(computerName.date).format("Do MMMM  YYYY, h:mm:ss a")}
             </p>
           </div>
         ))}

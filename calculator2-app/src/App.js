@@ -8,29 +8,54 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      results: ""
+      results: "",
+      userInput:"",
+      presentNumber:"",
+      precedingNumber:"",
+      operator:""
     };
   }
   clear = () => {
     this.setState({
-      results: ""
+      results: "",
+      userInput:""
     });
   };
   KeypadPressed = value => {
-    if (value === "=") {
-      return this.calculate();
+    if(value=== "="){
+      return this.evaluate()
     }
-
     this.setState({
-      results: this.state.results + value
+      userInput: this.state.userInput + value,
+      results:"",
+      
     });
   };
 
+  add=()=>{
+    this.state.precedingNumber=this.state.userInput;
+    this.setState({
+      userInput:""})
+      this.state.operator="plus"
+
+  };
+  evaluate=()=>{
+    this.state.presentNumber=this.state.userInput
+ ;
+if(this.state.operator==="plus"){
+  this.setState({
+    userInput:parseInt(this.state.precedingNumber)+
+    parseInt(this.state.presentNumber),
+    
+  })
+}  }
+
   calculate = () => {
     try {
-      var total = eval(this.state.results);
+      var total = eval(this.state.userInput);
       this.setState({
-        results: total
+        results: total,
+        userInput:total + ""
       });
     } catch (error) {
       this.setState({
@@ -42,9 +67,9 @@ export default class App extends Component {
     return (
       <div>
        <div className="container">
-        <Output results={this.state.results} />
+        <Output userInput={this.state.userInput} results={this.state.results}/>
         <div className="Keypads">
-        <Keypads clear={this.clear} keyPressed={this.KeypadPressed} />
+        <Keypads clear={this.clear} keyPressed={this.KeypadPressed} evaluate={this.evaluate} add={this.add}/>
         </div>
         </div>
       </div>

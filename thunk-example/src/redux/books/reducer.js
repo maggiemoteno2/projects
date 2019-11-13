@@ -1,3 +1,5 @@
+import { ADD_BOOK, EDIT_TITLE, REMOVE_BOOK, SAVE_EDITED_VALUE } from "../actionTypes";
+
 const initialState = {
   availableBooks: [
     {
@@ -11,7 +13,7 @@ const initialState = {
 
 export default function books(state = initialState, action) {
   switch (action.type) {
-    case "ADD_BOOK": {
+    case ADD_BOOK: {
       const { name, author} = action.payload;
       if(state.availableBooks.length<=0){
         return{
@@ -39,7 +41,7 @@ export default function books(state = initialState, action) {
       };
     }
     
-    case "EDIT_TITLE": {
+    case EDIT_TITLE: {
       const bookIndex = state.availableBooks.findIndex(
         book => book.id === action.payload.id
       );
@@ -48,10 +50,10 @@ export default function books(state = initialState, action) {
       return { ...state, availableBooks: [...state.availableBooks] };
     }
 
-    case "SAVE_EDITED_VALUE": {
+    case SAVE_EDITED_VALUE: {
       return { ...state, editedValue: action.payload };
     }
-    case "REMOVE_BOOK": {
+    case REMOVE_BOOK: {
       return {
         availableBooks: [
           ...state.availableBooks.filter(

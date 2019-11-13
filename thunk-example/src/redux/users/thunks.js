@@ -8,7 +8,6 @@ export const getAllUsers = () => {
 }
 
 export const addUser = (user) => {
-  console.log('asdf', user)
   return {
     type: "ADD_USER",
     payload: user

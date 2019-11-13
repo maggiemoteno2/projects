@@ -1,7 +1,7 @@
 
 .container {
   margin: 120px 700px 0px 700px;
-  background-color: purple;
+  background-color: rgb(27, 10, 27);
   padding: 30px 30px 30px 30px;  
   border: 5px solid black;
   border-radius: 25px;
@@ -9,8 +9,8 @@
 .keypads{
   grid-template-columns: auto auto auto;
     display: grid;
-    background: #c789f1;
-    color: #202124;
+    background: #ede7f0;
+    color: #e0e2e9;
     border-radius: 10px;
     margin-top: 18px;    
   }
@@ -30,8 +30,8 @@
     outline:none;
   }
 .Output {
-  height: 7vh;
-  width: 37.8vh;
+  height: 10vh;
+  width: 37vh;
   padding-left: 20px;
   background-color:  #202124;
   text-decoration: none;
