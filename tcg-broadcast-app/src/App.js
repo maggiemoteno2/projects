@@ -1,18 +1,22 @@
-import React from 'react'
 import './App.css';
-import Info from './containers/Info'
-import Messages from './containers/Messages'
-import { Component } from 'react'
+import React, { Component } from 'react'
+import Infomation from './container/Infomation/index'
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export default class App extends Component {
+// import Messages from './container/Messages'
+
+
+class App extends Component {
+
   render() {
     return (
       <div>
-        <Info/>
-        <Messages/>
+        <Infomation/>
+        {/* <Messages/> */}
       </div>
     )
   }
 }
 
+
+export default App;

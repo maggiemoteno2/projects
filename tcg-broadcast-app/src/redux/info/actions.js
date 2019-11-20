@@ -1,8 +1,7 @@
-import {ADD_NAME} from '../../actionTypes'
-
-export function addName(name){
+import {ADD_NAMES} from './../../actionTypes'
+export function addnames(name){
     return{
-        type: ADD_NAME,
-        payload:name
+        type:ADD_NAMES,
+        payload:{name}
     }
 }
