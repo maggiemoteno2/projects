@@ -1,30 +1,28 @@
 import {ADD_NAMES} from './../../actionTypes'
 const inititalState={ 
-    peopleNames:[
-    {
-        name:""
-    }
-],
+
+       userName:"",
+
 };
 
-export default function namesOfPeople(state=inititalState,action){
+export default function userName(state=inititalState,action){
+    console.log("hello",state.userName)
     switch(action.type){
         case ADD_NAMES:{const {name}=action.payload;
-        if(state.peopleNames.length<=0){
+        if(state.userName.length<=0){
             return{
-                ...state,peopleNames:[
-                    ...state.peopleNames,{
-                        name:name
-                    }
-                ]
+                    
+                       userName:name
+                    
+                
             }
         }
         return {
-            ...state,peopleNames:[
-                ...state.peopleNames,{
-                    name:name
-                }
-            ]
+        
+            
+                   userName:name
+                
+            
         };
     }
     default:{
