@@ -3,12 +3,16 @@ body{
   background-color: rgb(71, 57, 57);
 }
 .wrapper{
-  display: -webkit-box;
+  margin-right:10px;
   justify-content: space-around;
   display: flex;
-    align-content: center;
-    align-items: center;
+  align-content: center;
+  align-items: center;
+  padding-left: 15px;
 
+}
+.wrapper>span{
+  padding-right:30px;
 }
 .container-child {
   display:grid;
@@ -27,18 +31,15 @@ margin: 10rem 10rem 10rem;
 .date{
   flex:3;
 }
-.fa{
-  flex:1;
-}
-.input{
+
+/* .input{
   margin-right: 890px
-}
-.button{
-  margin-right: 890px;
-  
-}
+} */
 .userz{
-  width:35rem;
+  width:40vh;
+}
+.userz>h1{
+  padding-left: 15px;
 }
 #icon{
   margin: 1rem 1rem;
@@ -46,9 +47,9 @@ margin: 10rem 10rem 10rem;
 #computerIcon{
   margin: 0rem 1rem;
 }
-#usersTrash{
+/* #usersTrash{
   margin: 0rem 1rem;
-}
+} */
 button{
   border: 1px;
   color:rgb(241, 235, 235);

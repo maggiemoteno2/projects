@@ -80,6 +80,7 @@ class Books extends Component {
             <p>{moment(book.date).format("Do MMMM  YYYY, h:mm:ss a")}</p>
           </div>
         ))}
+
         <input
           type="text"
           placeholder="Title"
@@ -94,7 +95,8 @@ class Books extends Component {
           name="author"
           onChange={e => this.setState({ author: e.target.value })}
         />
-        <button
+        
+        <button className="add-books"
           disabled={this.state.author === ""}
           onClick={() => this.bookAdd(name, author)}
         >
@@ -109,7 +111,7 @@ class Books extends Component {
             name="titleEdited"
             onChange={e => this.setState({ titleEdited: e.target.value })}
           />
-          <button
+          <button className="edit-books"
             disabled={this.state.titleEdited === ""}
             onClick={() => this.editBook(titleEdited, idEdited)}
           >

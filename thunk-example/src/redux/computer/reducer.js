@@ -13,7 +13,7 @@ const initialState = {
 export default function computers(state = initialState, action) {
   switch (action.type) {
     case ADD_COMPUTER: {
-      const {name, } = action.payload;
+      const {name} = action.payload;
       if(state.computerNames.length<=0){
         return{
           ...state,computerNames: [
