@@ -34,9 +34,9 @@ class index extends Component {
         <i class="fa fa-user"></i>
         <div>
           <div className="text-box">
-            name: {""}
             <input
               type="text"
+              placeholder="Username"
               value={this.name}
               name="name"
               onChange={this.handleChange}

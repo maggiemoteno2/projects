@@ -2,7 +2,41 @@ body {
   text-align: center;
 
 }
+.header{
+  display: flex;
+  background-color: rgb(12, 90, 235);
+  padding-left:3vh;
+}
+.user-icon{
+  margin-left: 30px;
+  font-size: 35px;
+  margin-top:12px;
+  color:pink;
+  
+}
 
+.name-div{
+  margin: 18px 0px 0px 15px;
+  font-size: 20px;
+  color:rgb(247, 241, 241);
+  font-family: 'Arvo', serif;
+}
+.wrapper{
+  background-color: white;
+  height:200vh;
+}
+.post-info{
+display:flex;
+margin-left: 10px;
+}
+.message-icon{
+  font-size:50px;
+  color:pink;
+}
+.button{
+  background-color: rgb(12, 90, 235);
+  margin-left: 34.5vh;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
