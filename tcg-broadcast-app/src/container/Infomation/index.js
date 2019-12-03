@@ -48,7 +48,7 @@ class index extends Component {
           </div>
           <div className="btn" >
             <NavLink className="log-in" to={`Messages`}> 
-              <button disabled={this.state.name === ""}
+             <button disabled={this.state.name === ""}
                 onClick={() => this.nameAdd(this.state.name)}
                 >
                 Log in

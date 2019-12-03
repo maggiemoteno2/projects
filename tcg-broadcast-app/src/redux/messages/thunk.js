@@ -7,7 +7,7 @@ export const messageAdded =(message)=> {
   return async dispatch => {
     try{
       await Axios.post(
-        "http://ac88a44a6935711e982b602f197ebe6f-1529281652.eu-west-2.elb.amazonaws.com/person/",
+        "http://ac88a44a6935711e982b602f197ebe6f-1529281652.eu-west-2.elb.amazonaws.com/chat/person/",
         message.message
         );
         // dispatch({ type: ADD_MESSAGES, payload: [...messages] });
@@ -21,7 +21,7 @@ export const showMessages = () => {
   return async dispatch => {
       try{
         const messages = await Axios.get(
-          "http://ac88a44a6935711e982b602f197ebe6f-1529281652.eu-west-2.elb.amazonaws.com/person/"
+          "http://ac88a44a6935711e982b602f197ebe6f-1529281652.eu-west-2.elb.amazonaws.com/chat/person/"
         );
         dispatch({ type: GET_MESSAGES, payload: [...messages.data] });
       }catch(e){

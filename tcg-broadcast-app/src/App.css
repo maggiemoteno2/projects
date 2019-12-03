@@ -47,11 +47,7 @@ body{
   
 }
 .btn{
-  width:100%;
-  background: none;
-  border:2px solid rgb(166, 235, 235);
-  color:white;
-  padding: 5px;
+  
 }
 .text{
   color:white;
