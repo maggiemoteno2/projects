@@ -31,7 +31,7 @@ class index extends Component {
     return (
       <div className="login-box">
         <h1>TCG BROADCAST</h1>
-        <i class="fa fa-user"></i>
+
         <div>
           <div className="text-box">
             <input
@@ -48,7 +48,7 @@ class index extends Component {
           </div>
           <div className="btn" >
             <NavLink className="log-in" to={`Messages`}> 
-             <button disabled={this.state.name === ""}
+             <button className="button-log" disabled={this.state.name === ""}
                 onClick={() => this.nameAdd(this.state.name)}
                 >
                 Log in

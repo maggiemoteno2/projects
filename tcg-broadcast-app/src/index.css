@@ -4,14 +4,14 @@ body {
 }
 .header{
   display: flex;
-  background-color: rgb(12, 90, 235);
+  background-color: rgb(169, 193, 238);
   padding-left:3vh;
 }
 .user-icon{
   margin-left: 30px;
   font-size: 35px;
   margin-top:12px;
-  color:pink;
+  color:white;
   
 }
 
@@ -23,7 +23,7 @@ body {
 }
 .wrapper{
   background-color: white;
-  height:200vh;
+  height:3000vh;
 }
 .post-info{
 display:flex;
@@ -31,7 +31,7 @@ margin-left: 10px;
 }
 .message-icon{
   font-size:50px;
-  color:pink;
+
 }
 .button{
   background-color: rgb(12, 90, 235);
@@ -40,4 +40,10 @@ margin-left: 10px;
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.h1{
+  color:black;
+  font-family: 'Abril Fatface', cursive;
+  text-align: center;
+  font-size: 50px;
 }

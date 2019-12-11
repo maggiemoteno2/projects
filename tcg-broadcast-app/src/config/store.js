@@ -18,7 +18,7 @@ const persistConfig = {
   
   const enhancer = composeEnhancers(applyMiddleware(thunk));
   
-  const store = createStore(persistedReducer, enhancer);
+  const store = createStore(persistedReducer, enhancer,);
   
   let persistor = persistStore(store);
   

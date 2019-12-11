@@ -1,4 +1,4 @@
-import {GET_MESSAGES} from './../../actionTypes'
+import {GET_MESSAGES,SAVE_MESSAGES} from './../../actionTypes'
 
 const inititalState ={listOfMessages:[],
 date: new Date()
@@ -6,11 +6,10 @@ date: new Date()
 
 export default function messagesReducer(state = inititalState ,action){
     switch(action.type){
-        case GET_MESSAGES:{
-            const date= new Date()
+        case SAVE_MESSAGES:{
+            console.log("sdaf",JSON.parse(action.payload))
             const newState={
-                ...state,
-                listOfMessages:[...action.payload,{date:date}]
+                ...state,listOfMessages:[...JSON.parse(action.payload)]
             };
             return newState;
         }

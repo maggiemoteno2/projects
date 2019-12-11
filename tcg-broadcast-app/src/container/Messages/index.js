@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { showMessages, messageAdded } from "./../../redux/messages/thunk";
+// import { sendMessage } from "./../../redux/messages/thunk";
 import "font-awesome/css/font-awesome.min.css";
 import { NavLink } from "react-router-dom";
 import moment from "moment";
+import { saveMessage , sendMessage} from "../WebSocket"
+
 
 class Messages extends Component {
   constructor(props) {
@@ -18,23 +20,29 @@ class Messages extends Component {
     });
   };
   addMessages = () => {
-    console.log("messages", this.props.name);
-    this.props.messageAdded({
+    this.props.saveMessage({
       message: this.state.newMessage,
       name: this.props.name
     });
+    this.props.sendMessage({message: this.state.newMessage,
+      name: this.props.name});
     this.setState({ newMessage: "" });
-    this.props.showMessages();
   };
 
+  componentWillMount(){
+    this.props.saveMessage();
+  }
+
+  
   componentDidMount() {
-    this.timer = setInterval(() => {
-      console.log("polling");
-      this.props.showMessages();
-    }, 5000);
+
   }
   render() {
-    console.log("i'm here", this.state.newMessage);
+    const messages = this.props.messages
+    .map(message => ({...message,date:new Date(message.date)}))
+    .sort((a,b) =>{
+      return b.date.getTime() - a.date.getTime()
+    })
     return (
       <div className="userName">
         <header className="header">
@@ -55,18 +63,19 @@ class Messages extends Component {
               onChange={this.handleChange}
               maxLength="150"
               required
-            />
+              />
             <br />
-            <button className="button" onClick={this.addMessages}>
+            <button className="button" onClick={() => this.addMessages()}>
               Post
             </button>
           </div>
           <div className="post2text">
+              <h1 className="h1">Recent Posts</h1>
             <div className="message">
-              {this.props.messages.map(message => (
+              {messages.map(message => (
                 <div className="messages" key={message["uuid"]}>
                   <div className="post-info">
-                    <div className="message-icon">
+                    <div className="message-icon">  
                       <i class="fa fa-user-circle"></i>
                     </div>
                     <div id="name">
@@ -93,11 +102,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  messageAdded: (message, name) => {
-    dispatch(messageAdded({ message, name }));
+  sendMessage: (text) => {
+    dispatch(sendMessage(text));
   },
-  showMessages: () => {
-    dispatch(showMessages());
+  saveMessage: (messages) => {
+    dispatch(saveMessage(messages));
   }
 });
 
