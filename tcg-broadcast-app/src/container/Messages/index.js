@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import { sendMessage } from "./../../redux/messages/thunk";
 import "font-awesome/css/font-awesome.min.css";
 import { NavLink } from "react-router-dom";
 import moment from "moment";
@@ -33,19 +32,16 @@ class Messages extends Component {
     this.props.saveMessage();
   }
 
-  
-  componentDidMount() {
-
-  }
   render() {
     const messages = this.props.messages
     .map(message => ({...message,date:new Date(message.date)}))
-    .sort((a,b) =>{
-      return b.date.getTime() - a.date.getTime()
+    .sort((currentTime,previousTime) =>{
+      return previousTime.date.getTime() - currentTime.date.getTime()
     })
     return (
       <div className="userName">
         <header className="header">
+          <h1>
           <NavLink className="log-out" to="/">
             <span class="glyphicon glyphicon-arrow-left"></span>
           </NavLink>
@@ -53,9 +49,11 @@ class Messages extends Component {
             <i class="fa fa-user-circle"></i>
           </div>
           <div className="name-div">{this.props.name}</div>
+          </h1>
         </header>
         <div className="wrapper">
           <div className="textArea">
+          <div class="row">
             <textarea
               placeholder="'Enter Your Post'"
               value={this.state.newMessage}
@@ -65,6 +63,7 @@ class Messages extends Component {
               required
               />
             <br />
+            </div>
             <button className="button" onClick={() => this.addMessages()}>
               Post
             </button>
@@ -81,8 +80,7 @@ class Messages extends Component {
                     <div id="name">
                       <div className="name-two">{message["name"]}</div>
                       {moment(message.date)
-                        .startOf("hour")
-                        .fromNow()}
+                        .format("MMM Do YYYY")}
                     </div>
                   </div>
                   <h3 id="message">" {message["message"]} "</h3>

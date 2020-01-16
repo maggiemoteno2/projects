@@ -4,7 +4,6 @@ const url =
   "ws://ac88a44a6935711e982b602f197ebe6f-1529281652.eu-west-2.elb.amazonaws.com/chat/";
 var exampleSocket = new WebSocket(url);
 
-
 export const saveMessage =()=> {
     return  dispatch => {
        
@@ -20,14 +19,7 @@ exampleSocket.onopen = function (event) {
     console.log("connected");
 };
 
-
-
 export const sendMessage =(text) =>  dispatch => {
             exampleSocket.send(JSON.stringify(text))        
             console.log("text t" , text)
     }
-
-
-// export const sendMessage = (text) => {
- 
-//   }
